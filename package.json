@@ -1,5 +1,6 @@
 {
   "name": "bundle-tabs",
+  "publisher": "propstreet",
   "displayName": "bundle-tabs",
   "description": "Bundle content of open VS Code tabs into a LLM friendly text file",
   "version": "0.0.1",
@@ -14,7 +15,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.bundle-tabs",
+        "command": "propstreet.bundle-tabs",
         "title": "Bundle Open Files"
       }
     ]

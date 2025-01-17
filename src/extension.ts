@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
   // Register the command
   const disposable = vscode.commands.registerCommand(
-    "extension.bundle-tabs",
+    "propstreet.bundle-tabs",
     async () => {
       try {
         // Get all tabs across all tab groups
