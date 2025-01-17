@@ -1,14 +1,15 @@
 {
   "name": "bundle-tabs",
   "publisher": "propstreet",
+  "repository": "https://github.com/propstreet/bundle-tabs",
   "displayName": "bundle-tabs",
   "description": "Bundle content of open VS Code tabs into a LLM friendly text file",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
-    "Other"
+    "AI"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
