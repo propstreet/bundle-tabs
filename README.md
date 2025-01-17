@@ -4,8 +4,8 @@ Bundle the content of all your open editor tabs into one neatly formatted Markdo
 
 ## Features
 
-- **Merge Tabs**: Collect all open text tabs, format them in a single Markdown document with code blocks for each file’s language mode.  
-- **Clean Output**: Each file’s content is labeled with a relative path and wrapped in markdown fences (e.g., ```typescript ...```).  
+- **Merge Tabs**: Collect all open text tabs, format them in a single Markdown document with code blocks for each file's language mode.  
+- **Clean Output**: Each file's content is labeled with a relative path and wrapped in markdown fences (e.g., ```typescript ...```).  
 - **LLM-friendly**: Perfect for copying directly into GPT or other AI tools.
 
 **Example**  
@@ -16,7 +16,7 @@ If you have three open files:
 - `/src/bar.js`
 - `/README.md`
 
-Running the “Bundle Open Files” command creates a new unsaved Markdown file with sections like:
+Running the "Bundle Open Files" command creates a new unsaved Markdown file with sections like:
 
 ```md
 ## /src/foo.ts
@@ -34,7 +34,10 @@ Running the “Bundle Open Files” command creates a new unsaved Markdown file 
 
 ## Requirements
 
-No special configuration needed—just open a folder in VS Code, open a few files, and run the **“Bundle Open Files”** command.
+No special configuration needed—just open a folder in VS Code, open a few files, and run the **"Bundle Open Files"** command. You can:
+1. Open the command palette (Cmd+Shift+P / Ctrl+Shift+P)
+2. Type "Bundle Open Files" and select the command
+3. A new markdown file will be created with the bundled content
 
 ## Extension Settings
 
