@@ -2,7 +2,8 @@
   "name": "bundle-tabs",
   "publisher": "propstreet",
   "repository": "https://github.com/propstreet/bundle-tabs",
-  "displayName": "bundle-tabs",
+  "displayName": "Bundle Tabs",
+  "icon": "images/icon.png",
   "description": "Bundle content of open VS Code tabs into a LLM friendly text file",
   "version": "1.0.0",
   "engines": {
