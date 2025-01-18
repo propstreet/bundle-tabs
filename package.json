@@ -35,7 +35,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "vscode-test",
-    "test-headless": "xvfb-run -a vscode-test"
+    "test-headless": "npm run compile-tests && xvfb-run -a vscode-test"
   },
   "devDependencies": {
     "@types/vscode": "^1.96.0",
