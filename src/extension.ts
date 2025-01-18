@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { bundleTabContents } from "./bundler";
 
 export function activate(context: vscode.ExtensionContext) {
   // Register the command
@@ -11,40 +12,22 @@ export function activate(context: vscode.ExtensionContext) {
           (group) => group.tabs
         );
 
-        // We'll build a big string here, start with current day and time
-        let mergedContent = `# ${new Date().toLocaleString()}\n`;
-
-        // Process each tab to see if it's a text file
-        for (const tab of allTabs) {
-          if (tab.input instanceof vscode.TabInputText) {
-            // Open the TextDocument to access content
-            const doc = await vscode.workspace.openTextDocument(tab.input.uri);
-
-            // Build a relative path for the header
-            let relativePath = doc.fileName;
-            if (
-              vscode.workspace.workspaceFolders &&
-              vscode.workspace.workspaceFolders.length > 0
-            ) {
-              const rootPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-              relativePath = relativePath.replace(rootPath, "");
-            }
-
-            // Use doc.languageId to generate the fenced code block language
-            const language = doc.languageId;
-
-            mergedContent += `\n## ${relativePath}\n\n`;
-            mergedContent += `\`\`\`${language}\n`;
-            mergedContent += doc.getText();
-            mergedContent += `\n\`\`\`\n`;
-          }
-        }
+        const mergedContent = await vscode.window.withProgress(
+          {
+            location: vscode.ProgressLocation.Notification,
+            title: "Bundling open tabs...",
+            cancellable: false,
+          },
+          async (progress) => {
+            return await bundleTabContents(allTabs, progress);
+          });
 
         // Open the merged content in a new, unsaved document
         const newDoc = await vscode.workspace.openTextDocument({
           content: mergedContent,
           language: "markdown",
         });
+        
         await vscode.window.showTextDocument(newDoc, { preview: false });
       } catch (err) {
         vscode.window.showErrorMessage(`Error merging files: ${err}`);
