@@ -15,21 +15,25 @@ function createBundleFileName(now: Date): string {
 
 function getRelativePath(doc: vscode.TextDocument) {
   let relativePath = doc.fileName;
-  if (vscode.workspace.workspaceFolders &&
-    vscode.workspace.workspaceFolders.length > 0) {
+  if (
+    vscode.workspace.workspaceFolders &&
+    vscode.workspace.workspaceFolders.length > 0
+  ) {
     const rootPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
     relativePath = relativePath.replace(rootPath, "");
   }
   return relativePath;
 }
 
-export async function bundleTabContents(allTabs: vscode.Tab[], progress: vscode.Progress<{ message?: string; increment?: number; }>) {
-  
+export async function bundleTabContents(
+  allTabs: vscode.Tab[],
+  progress: vscode.Progress<{ message?: string; increment?: number }>
+) {
   const bundleFileName = createBundleFileName(new Date());
 
   let mergedContent = `# ${bundleFileName}\n`;
 
-  let totalTabs = allTabs.length;
+  const totalTabs = allTabs.length;
   let currentTab = 0;
 
   // Process each tab to see if it's a text file
@@ -39,7 +43,9 @@ export async function bundleTabContents(allTabs: vscode.Tab[], progress: vscode.
       const doc = await vscode.workspace.openTextDocument(tab.input.uri);
 
       // Update the progress message
-      progress.report({ message: `Bundling ${doc.fileName}... (${++currentTab}/${totalTabs})` });
+      progress.report({
+        message: `Bundling ${doc.fileName}... (${++currentTab}/${totalTabs})`,
+      });
 
       // Build a relative path for the header
       appendDocumentContent(doc);
