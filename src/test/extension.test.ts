@@ -67,13 +67,13 @@ suite("Extension Test Suite", () => {
       bundledText.startsWith("#"),
       "Merged doc should start with a markdown header"
     );
-	assert.ok(
-	  bundledText.includes("doc1"),
-	  "Merged doc should include content from doc1"
-	);
-	assert.ok(
-	  bundledText.includes("doc2"),
-	  "Merged doc should include content from doc2"
-	);
+    assert.ok(
+      bundledText.includes("doc1"),
+      "Merged doc should include content from doc1"
+    );
+    assert.ok(
+      bundledText.includes("doc2"),
+      "Merged doc should include content from doc2"
+    );
   });
 });

@@ -20,14 +20,15 @@ export function activate(context: vscode.ExtensionContext) {
           },
           async (progress) => {
             return await bundleTabContents(allTabs, progress);
-          });
+          }
+        );
 
         // Open the merged content in a new, unsaved document
         const newDoc = await vscode.workspace.openTextDocument({
           content: mergedContent,
           language: "markdown",
         });
-        
+
         await vscode.window.showTextDocument(newDoc, { preview: false });
       } catch (err) {
         vscode.window.showErrorMessage(`Error merging files: ${err}`);
