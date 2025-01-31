@@ -16,7 +16,7 @@ If you have three open files:
 - `/src/bar.js`
 - `/README.md`
 
-Running the "Bundle Open Files" command creates a new unsaved Markdown file with sections like:
+Running the "Bundle Open Tabs" command creates a new unsaved Markdown file with sections like:
 
 ```md
 ## /src/foo.ts
@@ -34,9 +34,10 @@ Running the "Bundle Open Files" command creates a new unsaved Markdown file with
 
 ## Requirements
 
-No special configuration needed—just open a folder in VS Code, open a few files, and run the **"Bundle Open Files"** command. You can:
+No special configuration needed—just open a folder in VS Code, open a few files, and run the **"Bundle Open Tabs"** command. You can:
+
 1. Open the command palette (Cmd+Shift+P / Ctrl+Shift+P)
-2. Type "Bundle Open Files" and select the command
+2. Type "Bundle Open Tabs" and select the command
 3. A new markdown file will be created with the bundled content
 
 ## Extension Settings
@@ -50,9 +51,13 @@ Currently, no additional settings are exposed. This extension aims to be lightwe
 
 ## Release Notes
 
+### 1.0.1
+
+- Added compatibility for Cursor (v0.44.11)
+
 ### 1.0.0
 
-- Initial release with basic functionality: merges open files into a new Markdown document.
+- Initial release with basic functionality: merges open tabs into a new Markdown document.
 
 ---
 
