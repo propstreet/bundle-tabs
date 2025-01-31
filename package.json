@@ -5,7 +5,7 @@
   "displayName": "Bundle Tabs",
   "icon": "images/icon.png",
   "description": "Bundle content of open VS Code tabs into a LLM friendly text file",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.93.1"
   },
