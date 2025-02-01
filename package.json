@@ -5,9 +5,9 @@
   "displayName": "Bundle Tabs",
   "icon": "images/icon.png",
   "description": "Bundle content of open VS Code tabs into a LLM friendly text file",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.93.1"
   },
   "categories": [
     "AI"
@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "propstreet.bundle-tabs",
-        "title": "Bundle Open Files"
+        "title": "Bundle Open Tabs"
       }
     ]
   },
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
-    "@types/vscode": "^1.96.0",
+    "@types/vscode": "1.93.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
